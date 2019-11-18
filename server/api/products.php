@@ -13,6 +13,6 @@ function get_product_data($link)
 {
   $query = "SELECT productId, name, price, image, shortDescription FROM `products`";
   $sql = mysqli_query($link, $query);
-  $data = (mysqli_fetch_all($sql));
+  $data = (mysqli_fetch_all($sql, MYSQLI_ASSOC));
   return $data;
 }
