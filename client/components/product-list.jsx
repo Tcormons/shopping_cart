@@ -4,6 +4,7 @@ import ProductListItem from './product-list-item';
 class ProductList extends React.Component {
   constructor(props) {
     super(props);
+    this.props = props;
     this.state = {
       products: []
     };
@@ -30,6 +31,7 @@ class ProductList extends React.Component {
             <ProductListItem
               key={index}
               product={product}
+              callback={this.props.callback}
             />
           ))}
         </div>
