@@ -4,7 +4,6 @@ import ProductListItem from './product-list-item';
 class ProductList extends React.Component {
   constructor(props) {
     super(props);
-    this.props = props;
     this.state = {
       products: []
     };
@@ -23,7 +22,7 @@ class ProductList extends React.Component {
     this.getProducts();
   }
 
-  render() {
+  render(props) {
     return (
       <div className='container-fluid col-md-11'>
         <div className='row'>
