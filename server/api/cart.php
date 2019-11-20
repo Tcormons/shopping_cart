@@ -3,10 +3,19 @@
 $link = get_db_link();
 
 if ($request['method'] === 'GET') {
-  if (!isset($_SESSION['cart_id'])) {
+  if (!$_SESSION['cart_id']) {
     $response['body'] = [];
     send($response);
+  } else {
+    $cartId = $_SESSION['cart_id'];
+    $query = $link->query("SELECT cartItems.cartItemId AS id, products.productId, products.name, products.price, products.image, products.shortDescription
+                                  FROM `cartItems` INNER JOIN `products`
+                                  ON cartItems.productId = products.productId
+                                  WHERE cartItems.cartId = $cartId");
   }
+  $response = (mysqli_fetch_assoc($query));
+  $response['body'] = $response;
+  send($response);
 }
 
 if ($request['method'] === 'POST') {
@@ -24,9 +33,10 @@ if ($request['method'] === 'POST') {
                                   FROM `cartItems` INNER JOIN `products`
                                   ON cartItems.productId = products.productId
                                   WHERE cartItems.cartItemId = $cartItemsInsertId");
+}
     $response = (mysqli_fetch_assoc($query));
+    $_SESSION['cart_id'] = $cartsInsertId;
     $response['body'] = $response;
     send($response);
-  }
 
 }
