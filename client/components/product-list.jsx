@@ -22,7 +22,7 @@ class ProductList extends React.Component {
     this.getProducts();
   }
 
-  render() {
+  render(props) {
     return (
       <div className='container-fluid col-md-11'>
         <div className='row'>
@@ -30,6 +30,7 @@ class ProductList extends React.Component {
             <ProductListItem
               key={index}
               product={product}
+              callback={this.props.callback}
             />
           ))}
         </div>
