@@ -32,7 +32,6 @@ if ($request['method'] === 'POST') {
     $productId = intval($request['body']['productId']);
     $priceQuery = $link->query("SELECT price FROM `products` WHERE products.productID = $productId");
     $price = (mysqli_fetch_assoc($priceQuery));
-
     $cartItemsInsert = $link->query("INSERT INTO `cartItems`(cartId, productId, price) VALUES ($cartsInsertId, $productId, $price[price])");
     $cartItemsInsertId = $link->insert_id;
     $query = $link->query("SELECT cartItems.cartItemId AS id, products.productId, products.name, products.price, products.image, products.shortDescription
