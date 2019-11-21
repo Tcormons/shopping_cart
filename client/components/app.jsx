@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './header';
 import ProductList from './product-list';
 import ProductDetails from './product-details';
+import CartSummary from './cart-summary';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class App extends React.Component {
 
     this.setView = this.setView.bind(this);
     this.addToCart = this.addToCart.bind(this);
+    this.cartCheckout = this.cartCheckout.bind(this);
   }
 
   setView(name, params) {
@@ -45,6 +47,12 @@ class App extends React.Component {
       }));
   }
 
+  cartCheckout() {
+    this.setState({
+      view: { name: 'cart', params: {} }
+    });
+  }
+
   componentDidMount() {
     this.getCartItems();
   }
@@ -53,7 +61,8 @@ class App extends React.Component {
     if (this.state.view.name === 'catalog') {
       return (
         <div>
-          <Header itemCount={this.state.cart.length}/>
+          <Header itemCount={this.state.cart.length}
+            checkout={this.cartCheckout}/>
           <ProductList callback={this.setView} />
         </div>
       );
@@ -62,12 +71,23 @@ class App extends React.Component {
     if (this.state.view.name === 'details') {
       return (
         <div>
-          <Header itemCount={this.state.cart.length}/>
+          <Header itemCount={this.state.cart.length}
+            checkout={this.cartCheckout}/>
           <ProductDetails
             params={this.state.view.params}
             callback={this.setView}
             addToCart={this.addToCart}
           />
+        </div>
+      );
+    }
+    if (this.state.view.name === 'cart') {
+      return (
+        <div>
+          <Header itemCount={this.state.cart.length}
+            checkout={this.cartCheckout} />
+          <CartSummary cart={this.state.cart}
+            callback={this.setView}/>
         </div>
       );
     }

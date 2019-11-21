@@ -12,7 +12,7 @@ if ($request['method'] === 'GET') {
                                   FROM `cartItems` INNER JOIN `products`
                                   ON cartItems.productId = products.productId
                                   WHERE cartItems.cartId = $cartId");
-  $response = (mysqli_fetch_all($query));
+  $response = (mysqli_fetch_all($query, MYSQLI_ASSOC));
   $response['body'] = $response;
   send($response);
 }
@@ -40,7 +40,7 @@ if ($request['method'] === 'POST') {
                                   WHERE cartItems.cartItemId = $cartItemsInsertId");
 
     $_SESSION['cart_id'] = $cartsInsertId;
-    $response = (mysqli_fetch_assoc($query));
+    $response = (mysqli_fetch_all($query, MYSQLI_ASSOC));
     $response['body'] = $response;
     send($response);
   }
