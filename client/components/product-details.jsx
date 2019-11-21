@@ -48,12 +48,7 @@ class ProductDetails extends React.Component {
         </div>
       );
     }
-
-    return (
-      <div>
-        Hello
-      </div>
-    );
+    return null;
   }
 }
 
