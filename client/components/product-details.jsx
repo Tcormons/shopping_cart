@@ -25,7 +25,7 @@ class ProductDetails extends React.Component {
       const price = `$${(product.price / 100).toFixed(2)}`;
 
       return (
-        <div className="container rounded col-11 my-5 p-3 bg-dark">
+        <div className="container rounded col-11 my-5 p-3 bg-dark shadow">
           <div className='d-flex text-white'
             onClick={() => this.props.callback('catalog', {})}
             style={{ cursor: 'pointer' }}

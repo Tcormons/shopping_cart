@@ -15,6 +15,7 @@ class App extends React.Component {
     this.setView = this.setView.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.cartCheckout = this.cartCheckout.bind(this);
+    this.removeFromCart = this.removeFromCart.bind(this);
   }
 
   setView(name, params) {
@@ -32,6 +33,9 @@ class App extends React.Component {
         cart: data
       }));
   }
+
+  // removeFromCart(product) {
+  // }
 
   addToCart(product) {
     const req = {
@@ -51,6 +55,21 @@ class App extends React.Component {
     this.setState({
       view: { name: 'cart', params: {} }
     });
+  }
+
+  placeOrder(cart) {
+    const req = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(cart)
+    };
+
+    fetch('/api/orders', req)
+      .then(response => response.json())
+      .then(data => this.setState({
+        cart: []
+      }));
+
   }
 
   componentDidMount() {
@@ -87,7 +106,8 @@ class App extends React.Component {
           <Header itemCount={this.state.cart.length}
             checkout={this.cartCheckout} />
           <CartSummary cart={this.state.cart}
-            callback={this.setView}/>
+            callback={this.setView}
+            removeCallback={this.removeFromCart}/>
         </div>
       );
     }

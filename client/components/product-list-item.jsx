@@ -5,9 +5,8 @@ function ProductListItem(props) {
   return (
     <div className="col-4 my-3 d-flex"
       onClick={() => props.callback('details', { productId: props.product.productId })}
-      style={{ cursor: 'pointer' }}
-    >
-      <div className="card">
+      style={{ cursor: 'pointer' }}>
+      <div className="card shadow rounded">
         <img className="card-img-top img" src={props.product.image} />
         <div className="card-body text-white bg-dark ">
           <h5 className="card-title">{props.product.name}</h5>
