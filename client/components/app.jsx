@@ -3,6 +3,7 @@ import Header from './header';
 import ProductList from './product-list';
 import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
+import Checkout from './checkout';
 
 class App extends React.Component {
   constructor(props) {
@@ -16,6 +17,8 @@ class App extends React.Component {
     this.addToCart = this.addToCart.bind(this);
     this.cartCheckout = this.cartCheckout.bind(this);
     this.removeFromCart = this.removeFromCart.bind(this);
+    this.placeOrder = this.placeOrder.bind(this);
+    this.viewOrder = this.viewOrder.bind(this);
   }
 
   setView(name, params) {
@@ -34,8 +37,12 @@ class App extends React.Component {
       }));
   }
 
-  // removeFromCart(product) {
-  // }
+  removeFromCart(product) {
+    const newCart = (this.state.cart.filter(item => item.id !== product.id));
+    this.setState({
+      cart: newCart
+    });
+  }
 
   addToCart(product) {
     const req = {
@@ -57,6 +64,12 @@ class App extends React.Component {
     });
   }
 
+  viewOrder() {
+    this.setState({
+      view: { name: 'checkout', params: {} }
+    });
+  }
+
   placeOrder(cart) {
     const req = {
       method: 'POST',
@@ -67,9 +80,10 @@ class App extends React.Component {
     fetch('/api/orders', req)
       .then(response => response.json())
       .then(data => this.setState({
+        view: { name: 'catalog', params: {} },
         cart: []
-      }));
-
+      }))
+      .catch(error => console.error('Error', error));
   }
 
   componentDidMount() {
@@ -81,7 +95,7 @@ class App extends React.Component {
       return (
         <div>
           <Header itemCount={this.state.cart.length}
-            checkout={this.cartCheckout}/>
+            checkout={this.cartCheckout} />
           <ProductList callback={this.setView} />
         </div>
       );
@@ -91,7 +105,7 @@ class App extends React.Component {
       return (
         <div>
           <Header itemCount={this.state.cart.length}
-            checkout={this.cartCheckout}/>
+            checkout={this.cartCheckout} />
           <ProductDetails
             params={this.state.view.params}
             callback={this.setView}
@@ -107,7 +121,19 @@ class App extends React.Component {
             checkout={this.cartCheckout} />
           <CartSummary cart={this.state.cart}
             callback={this.setView}
-            removeCallback={this.removeFromCart}/>
+            removeCallback={this.removeFromCart}
+            viewOrder={this.viewOrder}/>
+        </div>
+      );
+    }
+    if (this.state.view.name === 'checkout') {
+      return (
+        <div>
+          <Header itemCount={this.state.cart.length}
+            checkout={this.cartCheckout} />
+          <Checkout cart={this.state.cart}
+            callback={this.setView}
+            submitCallback={this.placeOrder}/>
         </div>
       );
     }
