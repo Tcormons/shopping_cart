@@ -5,14 +5,14 @@ A full stack LAMP & React shopping cart app.
 Designed for Desktop 
 
 ## Technologies
--React.js
--Webpack4
--Babel
--Node
--HTML5
--CSS3
--BootStrap
--AWS EC2 
+- React.js
+- Webpack4
+- Babel
+- Node
+- HTML5
+- CSS3
+- BootStrap
+- AWS EC2 
 
 ## DEMO
 
