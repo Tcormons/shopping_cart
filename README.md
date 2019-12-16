@@ -16,7 +16,7 @@ Designed for Desktop
 
 ## DEMO
 
-A functional demo can be seen at: https:/shopping-cart.tomascormons.tech
+A functional demo can be seen at: https://shopping-cart.tomascormons.tech
 
 ## Example 
 Image coming soon ... 
