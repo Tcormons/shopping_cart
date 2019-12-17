@@ -27,7 +27,7 @@ Designed for Desktop
 A functional demo can be seen at: https://shoppingcart.tomascormons.tech
 
 ## Example 
-! [ShoppingCart] (./server/public/images/Example.png) 
+! [ShoppingCart] (./server/public/images/example.png) 
 
 ## Development
 ### System Requirements
