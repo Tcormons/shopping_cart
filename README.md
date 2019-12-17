@@ -30,24 +30,28 @@ A functional demo can be seen at: https://shoppingcart.tomascormons.tech
 Image coming soon ... 
 
 ## Development
-# System Requirements
+### System Requirements
 - NPM 6 or higher
 - MYSQL 7 or higher
 
-# Inital Setup
+### Inital Setup
 - Clone Repository History 
+
 `git clone https://github.com/Tcormons/local-sports.git`
 
 - Install dependencies for NPM
+
 `npm install`
   
 - Import the database for MYSQL
+
 `npm run db:import`
 
 - Run Dev enviornment 
+
 `npm run dev` 
 
-# localhost:3000
+### localhost:3000
 
 > - Maintained by: `tcormons`
 
