@@ -3,7 +3,7 @@ import React from 'react';
 function ProductListItem(props) {
   const price = `$${(props.product.price / 100).toFixed(2)}`;
   return (
-    <div className="col-4 my-3 d-flex"
+    <div className="products m-2 d-flex"
       onClick={() => props.callback('details', { productId: props.product.productId })}
       style={{ cursor: 'pointer' }}>
       <div className="card shadow rounded">
