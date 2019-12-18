@@ -1,6 +1,6 @@
 # shopping-cart
 
-A full stack LAMP & React shopping cart app.
+A full stack LAMP & React shopping cart app focused on athletic gear
 
 Designed for Desktop
 
