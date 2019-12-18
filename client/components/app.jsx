@@ -43,14 +43,12 @@ class App extends React.Component {
     const req = {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ productId: product.productId })
+      body: JSON.stringify({ cartItemid: product.id })
     };
 
     fetch('/api/cart', req)
-      .then(response => response.json())
-      .then(data => data);
-
-    this.getCartItems();
+      .then(response => this.getCartItems())
+      .catch(error => console.error('There was an error in your request', error));
   }
 
   addToCart(product) {

@@ -46,19 +46,18 @@ if ($request['method'] === 'POST') {
   }
 }
 
-if ($request['method'] === 'DELETE' || !$_SESSION['cart_id']) {
-  if (!$request['body']['productId']) {
+if ($request['method'] === 'DELETE') {
+  if (!$request['body']['cartItemid']) {
     throw new ApiError('This product Id is not valid', 400);
   } else {
 
     $cartRemoveId = $_SESSION['cart_id'];
-    $productId = intval($request['body']['productId']);
+    $cartItemId = intval($request['body']['cartItemid']);
     $query = $link->query("DELETE FROM `cartItems`
                         WHERE cartId = $cartRemoveId
-                        AND productId = $productId");
+                        AND cartItemId = $cartItemId");
 
-    $response = (mysqli_fetch_all($query, MYSQLI_ASSOC));
-    $reponse['body'] = `Item {$productId} has been removed from your cart successfully`;
+    $reponse['body'] = `Item has been removed from your cart successfully`;
     send($response);
 
 
