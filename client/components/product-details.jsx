@@ -33,7 +33,7 @@ class ProductDetails extends React.Component {
             <div className="fa fa-arrow-left py-2 fa-lg icon"></div>
             <h4 className="ml-1">Back to Catalog</h4>
           </div>
-          <div className="d-flex">
+          <div className="products-details">
             <img className="rounded float-left m-2 img" src={product.image} />
             <div className="text-white my-3 ml-2">
               <h4 className="title">{product.name}</h4>
