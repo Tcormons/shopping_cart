@@ -28,8 +28,11 @@ A functional demo can be seen at: https://shoppingcart.tomascormons.tech
 
 ## Example 
 Desktop View
+
 ![ShoppingCart](./server/public/images/Example.png)
+
 Mobile View
+
 ![Screen Shot 2019-12-17 at 16 20 45](https://user-images.githubusercontent.com/26559330/71045300-52645f80-20e9-11ea-9264-9cf8899e7946.png)
 
 ## Development
