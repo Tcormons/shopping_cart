@@ -2,7 +2,7 @@
 
 A full stack LAMP & React shopping cart app.
 
-Designed for Desktop 
+Designed for Desktop
 
 ## Technologies
 - React.js
@@ -12,28 +12,28 @@ Designed for Desktop
 - HTML5
 - CSS3
 - BootStrap
-- AWS EC2 
+- AWS EC2
 
 ## Feature List
-- User can view items in catalog 
+- User can view items in catalog
 - User can select an item to view detailed information
 - User can add the item to their shopping cart
-- User can view their shopping cart 
+- User can view their shopping cart
 - User can remove items from their shopping cart
-- User can place an order from the shopping cart checkout 
+- User can place an order from the shopping cart checkout
 
 ## DEMO
 
 A functional demo can be seen at: https://shoppingcart.tomascormons.tech
 
-## Example 
+## Example
 Desktop View
 
 ![ShoppingCart](./server/public/images/Example.png)
 
 Mobile View
 
-![Screen Shot 2019-12-17 at 16 20 45](https://user-images.githubusercontent.com/26559330/71045300-52645f80-20e9-11ea-9264-9cf8899e7946.png)
+![Screen Shot 2019-12-18 at 10 14 55](https://user-images.githubusercontent.com/26559330/71111902-43c88780-217f-11ea-826f-669f7675ce62.png)
 
 ## Development
 ### System Requirements
@@ -41,24 +41,22 @@ Mobile View
 - MYSQL 7 or higher
 
 ### Inital Setup
-- Clone Repository History 
+- Clone Repository History
 
 `git clone https://github.com/Tcormons/local-sports.git`
 
 - Install dependencies for NPM
 
 `npm install`
-  
+
 - Import the database for MYSQL
 
 `npm run db:import`
 
-- Run Dev enviornment 
+- Run Dev enviornment
 
-`npm run dev` 
+`npm run dev`
 
 ### localhost:3000
 
 > - Maintained by: `tcormons`
-
-

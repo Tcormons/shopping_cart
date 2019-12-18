@@ -24,15 +24,19 @@
 }
 
 .header {
-  height: 7vh;
+  height: 8vh;
 }
 
 .footer {
   height: 7vh;
 }
 
-.checkout-container{
-  height: 82vh;
+.display-container{
+  min-height: 86vh;
+}
+
+.checkout-container {
+  min-height: 82vh;
 }
 
 @media (max-width: 576px) {
@@ -51,6 +55,15 @@
   }
   .cart-item {
     display: inline-block;
+  }
+  .banner-title {
+    font-size: 2.3rem;
+  }
+  .display-container{
+    min-height: 86vh;
+  }
+  .checkout-container{
+    min-height: 82vh;
   }
 }
 

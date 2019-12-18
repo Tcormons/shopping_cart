@@ -30,8 +30,7 @@ class ProductList extends React.Component {
             <ProductListItem
               key={index}
               product={product}
-              callback={this.props.callback}
-            />
+              callback={this.props.callback}/>
           ))}
         </div>
       </div>
