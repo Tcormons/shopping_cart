@@ -20,7 +20,7 @@ function CartSummary(props) {
           </div>
           <div className="d-flex cart-checkout text-black mr-2">
             <button className="btn btn-primary m-2"
-              disabled='true'
+              disabled={true}
               onClick={() => props.viewOrder(props.cart)}>
               Checkout</button>
             <p className="m-2 h4">{price}</p>
