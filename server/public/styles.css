@@ -7,7 +7,11 @@
   width: 30%;
 }
 
-.products-details{
+.products-details {
+  display: flex;
+}
+
+.cart-item{
   display: flex;
 }
 
@@ -15,10 +19,18 @@
   .products {
     width: 100%;
   }
-
-  .products-details{
+  .products-details {
     flex-direction: column;
     text-align: center;
+  }
+  .cart-checkout {
+    flex-direction: column;
+  }
+  .cart-display {
+    width: 150px;
+  }
+  .cart-item {
+    display: inline-block;
   }
 }
 
