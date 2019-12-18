@@ -76,7 +76,11 @@ class Checkout extends React.Component {
                 name="shippingAddress"></textarea>
             </div>
             <div className="d-flex justify-content-end">
-              <button className="btn btn-primary justify-content-end">
+              <button
+                className="btn btn-primary justify-content-end"
+                disabled={!!(this.state.name === '' ||
+                this.state.creditCard === '' ||
+                this.state.shippingAddress === '')}>
                 Submit</button>
             </div>
           </form>
