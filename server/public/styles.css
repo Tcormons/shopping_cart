@@ -11,8 +11,28 @@
   display: flex;
 }
 
-.cart-item{
+.cart-item {
   display: flex;
+}
+
+.main-image {
+  min-height: 70vh;
+  background-image: linear-gradient(rgba(160, 158, 158, 0.965), rgba(182, 8, 8, 0.705)), url(./images/shopping-cart-background.jpeg);
+  background-position: bottom;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header {
+  height: 7vh;
+}
+
+.footer {
+  height: 7vh;
+}
+
+.checkout-container{
+  height: 82vh;
 }
 
 @media (max-width: 576px) {

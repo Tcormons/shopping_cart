@@ -1,5 +1,7 @@
 import React from 'react';
 import Header from './header';
+import Banner from './banner';
+import Footer from './footer';
 import ProductList from './product-list';
 import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
@@ -96,7 +98,9 @@ class App extends React.Component {
         <div>
           <Header itemCount={this.state.cart.length}
             checkout={this.cartCheckout} />
+          <Banner />
           <ProductList callback={this.setView} />
+          <Footer />
         </div>
       );
     }
@@ -111,6 +115,7 @@ class App extends React.Component {
             callback={this.setView}
             addToCart={this.addToCart}
           />
+          <Footer />
         </div>
       );
     }
@@ -122,7 +127,8 @@ class App extends React.Component {
           <CartSummary cart={this.state.cart}
             callback={this.setView}
             removeCallback={this.removeFromCart}
-            viewOrder={this.viewOrder}/>
+            viewOrder={this.viewOrder} />
+          <Footer />
         </div>
       );
     }
@@ -133,7 +139,8 @@ class App extends React.Component {
             checkout={this.cartCheckout} />
           <Checkout cart={this.state.cart}
             callback={this.setView}
-            submitCallback={this.placeOrder}/>
+            submitCallback={this.placeOrder} />
+          <Footer />
         </div>
       );
     }
