@@ -11,14 +11,14 @@ class Header extends React.Component {
       <div>
         <div className="header col-sm-12 sticky-top bg-dark text-white shadow d-flex justify-content-between">
           <div className="d-flex display-5 align-self-center">
-            <div className="m-1 icon align-self-center"></div>
-            <h1 className="banner-title ml-1 mt-1">Local Sports</h1>
+            <div className="icon align-self-center"></div>
+            <h1 className="banner-title ml-2 mt-1">Local Sports</h1>
           </div>
           <div className="d-flex align-self-center"
             onClick={this.props.checkout}
             style={{ cursor: 'pointer' }}>
             <h6 className="mt-3">{this.props.itemCount} Items</h6>
-            <div className="fa fa-shopping-cart ml-2 mt-3 fa-lg icon"></div>
+            <div className="fa fa-shopping-cart ml-2 mt-3 fa-lg"></div>
           </div>
         </div>
       </div>

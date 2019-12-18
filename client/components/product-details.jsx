@@ -30,7 +30,7 @@ class ProductDetails extends React.Component {
             <div className='d-flex text-white'
               onClick={() => this.props.callback('catalog', {})}
               style={{ cursor: 'pointer' }}>
-              <div className="fa fa-arrow-left py-2 fa-lg icon"></div>
+              <div className="fa fa-arrow-left py-2 fa-lg"></div>
               <h4 className="ml-1">Back to Catalog</h4>
             </div>
             <div className="products-details">

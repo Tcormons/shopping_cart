@@ -13,7 +13,7 @@ function CartSummary(props) {
             <div className='d-flex text-black ml-2 align-self-center'
               onClick={() => props.callback('catalog', {})}
               style={{ cursor: 'pointer' }}>
-              <div className="fa fa-arrow-left py-2 fa-lg icon"></div>
+              <div className="fa fa-arrow-left py-2 fa-lg"></div>
               <h4 className="ml-1">Back</h4>
             </div>
             <div className="d-flex text-black align-self-center">
@@ -50,7 +50,7 @@ function CartSummary(props) {
           <div className='d-flex text-black ml-2 align-self-center'
             onClick={() => props.callback('catalog', {})}
             style={{ cursor: 'pointer' }}>
-            <div className="fa fa-arrow-left py-2 fa-lg icon"></div>
+            <div className="fa fa-arrow-left py-2 fa-lg"></div>
             <h4 className="ml-1">Back</h4>
           </div>
           <div className="d-flex text-black flex-column align-self-baseline">
