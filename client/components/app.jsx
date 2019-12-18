@@ -82,8 +82,8 @@ class App extends React.Component {
     fetch('/api/orders', req)
       .then(response => response.json())
       .then(data => this.setState({
-        view: { name: 'catalog', params: {} }
-        // cart: []
+        view: { name: 'catalog', params: {} },
+        cart: []
       }))
       .catch(error => console.error('Error', error));
   }
