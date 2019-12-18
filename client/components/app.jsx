@@ -40,10 +40,17 @@ class App extends React.Component {
   }
 
   removeFromCart(product) {
-    const newCart = (this.state.cart.filter(item => item.id !== product.id));
-    this.setState({
-      cart: newCart
-    });
+    const req = {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ productId: product.productId })
+    };
+
+    fetch('/api/cart', req)
+      .then(response => response.json())
+      .then(data => data);
+
+    this.getCartItems();
   }
 
   addToCart(product) {
