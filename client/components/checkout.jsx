@@ -34,9 +34,9 @@ class Checkout extends React.Component {
 
     return (
       <div className='checkout-container'>
-        <div className="container rounded col-11 my-5 p-3 bg-dark shadow">
+        <div className="container rounded col-11 mt-4 p-2 bg-dark shadow">
           <div className="d-flex justify-content-between mb-2">
-            <div className='d-flex text-white align-self-center'>
+            <div className='d-flex text-white align-self-baseline'>
               <div className="fa fa-arrow-left py-2 fa-lg icon"
                 onClick={() => this.props.callback('catalog', {})}
                 style={{ cursor: 'pointer' }}></div>
@@ -45,11 +45,11 @@ class Checkout extends React.Component {
                 style={{ cursor: 'pointer' }}>
                 Back</h4>
             </div>
-            <div className='d-flex text-white'>
-              <h2 className="ml-4">Checkout</h2>
+            <div className='text-white align-self-baseline'>
+              <h2 className="">Checkout</h2>
             </div>
-            <div className='d-flex text-white'>
-              <h5 className="text-right">Total {price}</h5>
+            <div className='text-white align-self-baseline'>
+              <div className="h5">{price}</div>
             </div>
           </div>
           <form className="m-2"
