@@ -11,9 +11,9 @@ function CartSummaryItem(props) {
           <p className="price">{price}</p>
           <p className="text">{props.product.shortDescription}</p>
           <div className="d-flex justify-content-end">
-            <button className="btn btn-danger"
+            {/* <button className="btn btn-danger"
               onClick={() => props.callback(props.product)}>
-              Remove </button>
+              Remove </button> */}
           </div>
         </div>
       </div>
