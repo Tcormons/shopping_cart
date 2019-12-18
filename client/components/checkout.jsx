@@ -65,7 +65,7 @@ class Checkout extends React.Component {
               <input className="rounded form-control"
                 onChange={this.handleFormChange}
                 placeholder="Credit Card"
-                type="creditCard"
+                type="number"
                 name="creditCard"></input>
             </div>
             <div className="d-flex justify-content-center form-group">
