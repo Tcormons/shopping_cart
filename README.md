@@ -1,8 +1,8 @@
 # shopping-cart
 
-A full stack LAMP & React shopping cart app.
+A full stack LAMP & React shopping cart app focused on athletic gear
 
-Designed for Desktop
+Designed for Desktop && Mobile Responsive
 
 ## Technologies
 - React.js
