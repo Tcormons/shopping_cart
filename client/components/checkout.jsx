@@ -37,7 +37,7 @@ class Checkout extends React.Component {
         <div className="container rounded col-11 mt-4 p-2 bg-dark shadow">
           <div className="d-flex justify-content-between mb-2">
             <div className='d-flex text-white align-self-baseline'>
-              <div className="fa fa-arrow-left py-2 fa-lg icon"
+              <div className="fa fa-arrow-left py-2 fa-lg"
                 onClick={() => this.props.callback('catalog', {})}
                 style={{ cursor: 'pointer' }}></div>
               <h4 className="ml-1"
