@@ -9,7 +9,7 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        <div className="header col-sm-12 sticky-top bg-dark text-white shadow d-flex justify-content-between">
+        <div className="header col-12 sticky-top bg-dark text-white shadow d-flex justify-content-between">
           <div className="icon align-self-center"></div>
           <h1 className="banner-title align-self-center">Local Sports</h1>
           <div className="d-flex align-self-center"

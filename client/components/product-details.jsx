@@ -26,7 +26,7 @@ class ProductDetails extends React.Component {
 
       return (
         <div className='display-container'>
-          <div className="container rounded col-11 my-5 p-3 bg-dark shadow">
+          <div className="container rounded col-11 my-3 p-3 bg-dark shadow">
             <div className='d-flex text-white'
               onClick={() => this.props.callback('catalog', {})}
               style={{ cursor: 'pointer' }}>

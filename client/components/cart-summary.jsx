@@ -9,22 +9,21 @@ function CartSummary(props) {
     return (
       <div>
         <div className="display-container">
-          <div className="col-sm-12 d-flex justify-content-between bg-white sticky-top shadow">
+          <div className="col-sm-12 d-flex justify-content-around bg-white sticky-top shadow">
             <div className='d-flex text-black ml-2 align-self-center'
               onClick={() => props.callback('catalog', {})}
               style={{ cursor: 'pointer' }}>
               <div className="fa fa-arrow-left py-2 fa-lg"></div>
               <h4 className="ml-1">Back</h4>
             </div>
-            <div className="d-flex text-black align-self-center">
-              <h2 className="m-1 cart-display text-center">My Cart</h2>
+            <div className="d-flex text-black flex-column align-self-baseline">
+              <h2 className="m-auto cart-display text-center">My Cart</h2>
+              <p className="m-2 h4 text-center">{price}</p>
             </div>
             <div className="d-flex cart-checkout text-black mr-2">
-              <button className="btn btn-primary m-2"
-                disabled={true}
+              <button className="btn btn-primary m-auto"
                 onClick={() => props.viewOrder(props.cart)}>
                 Checkout</button>
-              <p className="m-2 h4">{price}</p>
             </div>
           </div>
 

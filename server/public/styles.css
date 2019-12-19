@@ -27,6 +27,7 @@
 
 .cart-item {
   display: flex;
+  margin: 2%;
 }
 
 .main-image {
