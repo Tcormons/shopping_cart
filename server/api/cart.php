@@ -16,6 +16,10 @@ if ($request['method'] === 'GET') {
   $response['body'] = $response;
   send($response);
 }
+// Use Query to allow multiples of single product
+// // 'INSERT INTO cartItems(productId, cartItemId, cartId, quantity, price)
+// //  VALUES (1, cartItemId, 24, quantity, price)
+//  ON DUPLICATE KEY UPDATE quantity = quantity + 1';
 
 if ($request['method'] === 'POST') {
   if (!$request['body']['productId']) {
@@ -30,9 +34,10 @@ if ($request['method'] === 'POST') {
 
     $cartsInsertId = $_SESSION['cart_id'];
     $productId = intval($request['body']['productId']);
+    $quantity = 1;
     $priceQuery = $link->query("SELECT price FROM `products` WHERE products.productID = $productId");
     $price = (mysqli_fetch_assoc($priceQuery));
-    $cartItemsInsert = $link->query("INSERT INTO `cartItems`(cartId, productId, price) VALUES ($cartsInsertId, $productId, $price[price])");
+    $cartItemsInsert = $link->query("INSERT INTO `cartItems`(cartId, productId, quantity, price) VALUES ($cartsInsertId, $productId, $quantity, $price[price])");
     $cartItemsInsertId = $link->insert_id;
     $query = $link->query("SELECT cartItems.cartItemId AS id, products.productId, products.name, products.price, products.image, products.shortDescription
                                   FROM `cartItems` INNER JOIN `products`

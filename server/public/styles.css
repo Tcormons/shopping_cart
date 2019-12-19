@@ -10,6 +10,11 @@
 
 .products {
   width: 30%;
+  transition: .5s all;
+}
+
+.products:hover {
+  box-shadow: 0 0 20px rgba(243, 53, 53, 0.904);
 }
 
 .products-details {
@@ -28,6 +33,11 @@
 .cart-item {
   display: flex;
   margin: 2%;
+  transition: .5s all;
+}
+
+.cart-item:hover {
+  box-shadow: 0 0 20px rgba(243, 53, 53, 0.904);
 }
 
 .main-image {
@@ -54,7 +64,13 @@
   min-height: 82vh;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 785px) {
+  .products {
+    width: 45%;
+  }
+}
+
+@media (max-width: 500px) {
   .products {
     width: 100%;
   }

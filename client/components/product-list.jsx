@@ -24,7 +24,7 @@ class ProductList extends React.Component {
 
   render(props) {
     return (
-      <div className='container-fluid col-md-11 '>
+      <div className='container-fluid col-md-11'>
         <div className='row justify-content-between'>
           {this.state.products.map((product, index) => (
             <ProductListItem
