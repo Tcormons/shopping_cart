@@ -10,6 +10,11 @@
 
 .products {
   width: 30%;
+  transition: .5s all;
+}
+
+.products:hover {
+  box-shadow: 0 0 20px rgba(243, 53, 53, 0.904);
 }
 
 .products-details {
