@@ -4,6 +4,8 @@ A full stack LAMP & React shopping cart app focused on athletic gear
 
 Designed for Desktop && Mobile Responsive
 
+Maintained by `tcormons`
+
 ## Technologies
 - React.js
 - Webpack4
@@ -23,17 +25,15 @@ Designed for Desktop && Mobile Responsive
 - User can place an order from the shopping cart checkout
 
 ## DEMO
-
-A functional demo can be seen at: https://shoppingcart.tomascormons.tech
+https://shoppingcart.tomascormons.tech
 
 ## Example
 Desktop View
-
-![ShoppingCart](./server/public/images/Example.png)
+![ShoppingCart](./server/public/images/example/ShoppingCartDemo.gif)
 
 Mobile View
 
-![Screen Shot 2019-12-18 at 10 14 55](https://user-images.githubusercontent.com/26559330/71111902-43c88780-217f-11ea-826f-669f7675ce62.png)
+![ShoppingCart](./server/public/images/example/ShoppingCartDemoMobile.gif)
 
 ## Development
 ### System Requirements
@@ -58,5 +58,3 @@ Mobile View
 `npm run dev`
 
 ### localhost:3000
-
-> - Maintained by: `tcormons`
