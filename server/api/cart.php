@@ -16,7 +16,7 @@ if ($request['method'] === 'GET') {
   $response['body'] = $response;
   send($response);
 }
-
+// Use Query to allow multiples of single product
 // // 'INSERT INTO cartItems(productId, cartItemId, cartId, quantity, price)
 // //  VALUES (1, cartItemId, 24, quantity, price)
 //  ON DUPLICATE KEY UPDATE quantity = quantity + 1';
