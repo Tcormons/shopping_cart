@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './header';
 import Banner from './banner';
 import Footer from './footer';
+import Modal from './modal';
 import ProductList from './product-list';
 import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
@@ -11,7 +12,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: { name: 'catalog', params: {} },
+      view: { name: 'intro', params: {} },
       cart: []
     };
 
@@ -21,6 +22,7 @@ class App extends React.Component {
     this.removeFromCart = this.removeFromCart.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
     this.viewOrder = this.viewOrder.bind(this);
+    this.setCatalogView = this.setCatalogView.bind(this);
   }
 
   setView(name, params) {
@@ -51,18 +53,18 @@ class App extends React.Component {
       .catch(error => console.error('There was an error in your request', error));
   }
 
-  addToCart(product) {
+  addToCart(product, operator) {
     const req = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(product)
+      body: JSON.stringify({ productId: product.productId, operator: operator })
     };
-
     fetch('/api/cart', req)
       .then(response => response.json())
-      .then(data => this.setState({
-        cart: this.state.cart.concat(data)
-      }));
+      .then(data => {
+        this.setState();
+        this.getCartItems();
+      });
   }
 
   cartCheckout() {
@@ -75,6 +77,10 @@ class App extends React.Component {
     this.setState({
       view: { name: 'checkout', params: {} }
     });
+  }
+
+  setCatalogView() {
+    this.setState({ view: { name: 'catalog', params: {} } });
   }
 
   placeOrder(cart) {
@@ -98,14 +104,32 @@ class App extends React.Component {
   }
 
   render() {
+    if (this.state.view.name === 'intro') {
+      return (
+        <div>
+          <Header
+            itemCount={this.state.cart}
+            callback={this.setCatalogView} />
+          <Banner />
+          <Modal callback={this.setCatalogView} />
+          <ProductList />
+          <Footer
+            callback={this.setCatalogView} />
+        </div>
+      );
+    }
+
     if (this.state.view.name === 'catalog') {
       return (
         <div>
-          <Header itemCount={this.state.cart.length}
-            checkout={this.cartCheckout} />
+          <Header
+            itemCount={this.state.cart}
+            checkout={this.cartCheckout}
+            callback={this.setCatalogView} />
           <Banner />
           <ProductList callback={this.setView} />
-          <Footer />
+          <Footer
+            callback={this.setCatalogView} />
         </div>
       );
     }
@@ -113,39 +137,49 @@ class App extends React.Component {
     if (this.state.view.name === 'details') {
       return (
         <div>
-          <Header itemCount={this.state.cart.length}
+          <Header
+            callback={this.setCatalogView}
+            itemCount={this.state.cart}
             checkout={this.cartCheckout} />
           <ProductDetails
             params={this.state.view.params}
             callback={this.setView}
-            addToCart={this.addToCart}
-          />
-          <Footer />
+            addToCart={this.addToCart}/>
+          <Footer
+            callback={this.setCatalogView}/>
         </div>
       );
     }
     if (this.state.view.name === 'cart') {
       return (
         <div>
-          <Header itemCount={this.state.cart.length}
+          <Header
+            callback={this.setCatalogView}
+            itemCount={this.state.cart}
             checkout={this.cartCheckout} />
-          <CartSummary cart={this.state.cart}
+          <CartSummary
+            cart={this.state.cart}
             callback={this.setView}
             removeCallback={this.removeFromCart}
             viewOrder={this.viewOrder} />
-          <Footer />
+          <Footer
+            callback={this.setCatalogView} />
         </div>
       );
     }
     if (this.state.view.name === 'checkout') {
       return (
         <div>
-          <Header itemCount={this.state.cart.length}
+          <Header
+            callback={this.setCatalogView}
+            itemCount={this.state.cart}
             checkout={this.cartCheckout} />
-          <Checkout cart={this.state.cart}
+          <Checkout
+            cart={this.state.cart}
             callback={this.setView}
             submitCallback={this.placeOrder} />
-          <Footer />
+          <Footer
+            callback={this.setCatalogView} />
         </div>
       );
     }
