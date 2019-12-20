@@ -1,11 +1,13 @@
 * {
   cursor: default;
   font-family: 'Roboto Condensed', sans-serif;
+  user-select: none;
 }
 
 .img {
   object-fit: contain;
   height: 300px;
+  margin: 2vh 0;
 }
 
 .products {
@@ -38,6 +40,10 @@
 
 .cart-item:hover {
   box-shadow: 0 0 20px rgba(243, 53, 53, 0.904);
+}
+
+.item-container{
+
 }
 
 .checkout-input {
@@ -98,8 +104,13 @@
   .products {
     width: 45%;
   }
-
-  .intro-modal{
+  .cart-item {
+    display: inline-block;
+  }
+  .img {
+    width: 100%;
+  }
+  .intro-modal {
     height: 35vh;
   }
 }
@@ -130,10 +141,14 @@
   .checkout-container {
     min-height: 82vh;
   }
-
   .intro-modal {
     font-size: 1rem;
     height: 15vh;
+  }
+  .img {
+    width: 100%;
+    margin: 0;
+    margin-top: 2vh;
   }
 }
 

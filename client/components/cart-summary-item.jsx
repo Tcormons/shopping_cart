@@ -3,27 +3,28 @@ import React from 'react';
 function CartSummaryItem(props) {
   const price = `$${(props.product.price / 100).toFixed(2)}`;
   return (
-    <div className="cart-item bg-dark rounded justify-content-around">
-      <img className="img m-auto rounded" src={props.product.image} />
-      <div className="body text-white m-3 text-center">
-        <h5 className="title">{props.product.name}</h5>
+    <div className="cart-item row col-11 mx-auto bg-dark rounded">
+      <img className="img img-fluid text-center rounded" src={props.product.image} />
+      <div className="item-container text-white m-3 text-center d-flex align-self-center">
         <div className="mt-3 text-center">
-          <div className="price">{price}</div>
-          <div className='text-center m-auto'>
-            <p className="mr-3"> Quantity </p>
+          <h5 className="title">{props.product.name}</h5>
+          <div className="price mb-2 h-5">{price}</div>
+          <div className='text-center mb-3'>
+            <p className="m-0"> Quantity </p>
             <i className="fa fa-minus-circle fa-lg m-2"
-              aria-hidden="true"></i>
-            <input className="value text-center"
+              aria-hidden="true"
+              onClick={() => props.product.quantity > 1 ? props.callbackQuantity(props.product, '-') : false}></i>
+            <input disabled className="value text-center align-self-center"
               placeholder={props.product.quantity}
-              user-select='none'
-              style={{ width: '10vw' }} />
+              style={{ width: '10vw', height: '1.4rem' }} />
             <i className="fa fa-plus-circle fa-lg m-2"
-              aria-hidden="true"></i>
+              aria-hidden="true"
+              onClick={() => props.callbackQuantity(props.product, '+')}></i>
           </div>
           <p className="text">{props.product.shortDescription}</p>
           <div className="text-right">
             <button className="btn btn-danger"
-              onClick={() => props.callback(props.product)}>
+              onClick={() => props.callbackRemoveItem(props.product)}>
               Remove Item </button>
           </div>
         </div>

@@ -2,7 +2,8 @@ import React from 'react';
 import CartSummaryItem from './cart-summary-item';
 
 function CartSummary(props) {
-  const total = props.cart.reduce((accum, item) => (accum + item.price), 0);
+
+  const total = props.cart.reduce((accum, item) => (accum + (item.price * item.quantity)), 0);
   const price = `$${(total / 100).toFixed(2)}`;
 
   if (props.cart.length === 0) {
@@ -43,8 +44,8 @@ function CartSummary(props) {
   }
 
   return (
-    <div>
-      <div className="display-container">
+    <div className="display-container">
+      <div className="row">
         <div className="col-sm-12 d-flex justify-content-around bg-white sticky-top shadow">
           <div className='d-flex text-black ml-2 align-self-center'
             onClick={() => props.callback('catalog', {})}
@@ -63,12 +64,13 @@ function CartSummary(props) {
           </div>
         </div>
 
-        <div className='container-fluid col-md-11'>
+        <div className='container-fluid col-12 text-center'>
           {props.cart.map((product, index) => (
             <CartSummaryItem
               key={index}
               product={product}
-              callback={props.removeCallback} />
+              callbackRemoveItem={props.removeCallback}
+              callbackQuantity={props.quantityCallback} />
           ))}
         </div>
       </div>
