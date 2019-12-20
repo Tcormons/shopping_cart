@@ -161,6 +161,7 @@ class App extends React.Component {
             cart={this.state.cart}
             callback={this.setView}
             removeCallback={this.removeFromCart}
+            quantityCallback={this.addToCart}
             viewOrder={this.viewOrder} />
           <Footer
             callback={this.setCatalogView} />
