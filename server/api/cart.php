@@ -8,7 +8,7 @@ if ($request['method'] === 'GET') {
     send($response);
   }
   $cartId = $_SESSION['cart_id'];
-  $query = $link->query("SELECT cartItems.cartItemId AS id, products.productId, products.name, products.price, products.image, products.shortDescription
+  $query = $link->query("SELECT cartItems.cartItemId AS id, products.productId, products.name, products.price, products.image, products.shortDescription, cartItems.quantity
                                   FROM `cartItems` INNER JOIN `products`
                                   ON cartItems.productId = products.productId
                                   WHERE cartItems.cartId = $cartId");
@@ -16,30 +16,28 @@ if ($request['method'] === 'GET') {
   $response['body'] = $response;
   send($response);
 }
-// Use Query to allow multiples of single product
-// // 'INSERT INTO cartItems(productId, cartItemId, cartId, quantity, price)
-// //  VALUES (1, cartItemId, 24, quantity, price)
-//  ON DUPLICATE KEY UPDATE quantity = quantity + 1';
 
 if ($request['method'] === 'POST') {
   if (!$request['body']['productId']) {
     throw new ApiError('This product Id is not valid', 400);
   } else {
-
     if (!$_SESSION['cart_id']) {
       $cartId = $link->query("INSERT INTO `carts`(createdAt) VALUES (CURRENT_TIMESTAMP)");
       $cartInsertId = $link->insert_id;
       $_SESSION['cart_id'] = $cartInsertId;
     }
-
+    // $quanity = 1;
     $cartsInsertId = $_SESSION['cart_id'];
+    $operator = $request['body']['operator'];
     $productId = intval($request['body']['productId']);
-    $quantity = 1;
     $priceQuery = $link->query("SELECT price FROM `products` WHERE products.productID = $productId");
     $price = (mysqli_fetch_assoc($priceQuery));
-    $cartItemsInsert = $link->query("INSERT INTO `cartItems`(cartId, productId, quantity, price) VALUES ($cartsInsertId, $productId, $quantity, $price[price])");
+    $cartItemsInsert = $link->query("INSERT INTO `cartItems`(cartId, productId, quantity, price)
+                                      VALUES ($cartsInsertId, $productId, 1, $price[price])
+                                      ON DUPLICATE KEY UPDATE quantity = quantity $operator 1");
+
     $cartItemsInsertId = $link->insert_id;
-    $query = $link->query("SELECT cartItems.cartItemId AS id, products.productId, products.name, products.price, products.image, products.shortDescription
+    $query = $link->query("SELECT cartItems.cartItemId AS id, products.productId, products.name, products.price, products.image, products.shortDescription, cartItems.quantity
                                   FROM `cartItems` INNER JOIN `products`
                                   ON cartItems.productId = products.productId
                                   WHERE cartItems.cartItemId = $cartItemsInsertId");

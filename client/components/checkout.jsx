@@ -55,21 +55,21 @@ class Checkout extends React.Component {
           <form className="m-2"
             onSubmit={this.handleSubmitForm}>
             <div className="d-flex justify-content-center form-group">
-              <input className="rounded form-control"
+              <input className="rounded checkout-input form-control"
                 onChange={this.handleFormChange}
                 placeholder="Full Name"
                 type="name"
                 name="name"></input>
             </div>
             <div className="d-flex justify-content-center form-group">
-              <input className="rounded form-control"
+              <input className="rounded checkout-input form-control"
                 onChange={this.handleFormChange}
                 placeholder="Credit Card"
                 type="number"
                 name="creditCard"></input>
             </div>
             <div className="d-flex justify-content-center form-group">
-              <textarea className="rounded form-control"
+              <textarea className="rounded checkout-input form-control"
                 onChange={this.handleFormChange}
                 placeholder="Shipping Address"
                 type="shippingAddress"
