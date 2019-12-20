@@ -68,7 +68,7 @@ class ProductDetails extends React.Component {
           <div className='background-modal'>
             <div className='intro-modal border border-light rounded shadow m-auto d-flex'>
               <div className='m-auto align-self-center text-center'>
-                <div>Great! Let&apos;s get you out there playing! <br /> None of your transactions will be processed</div>
+                <div>Great! Let&apos;s get you out there playing! <br /> * None of your transactions will be processed * </div>
                 <div className='d-flex justify-content-around m-auto'>
                   <button className="btn btn-secondary"
                     onClick={() => this.props.callback('catalog', {})}>Keep Shopping</button>
