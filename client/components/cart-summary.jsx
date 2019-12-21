@@ -35,6 +35,7 @@ class CartSummary extends React.Component {
               </div>
               <div className="d-flex cart-checkout text-black mr-2">
                 <button className="btn btn-primary m-auto"
+                  disabled={true}
                   onClick={() => this.props.viewOrder(this.props.cart)}>
                   Checkout</button>
               </div>
@@ -61,7 +62,7 @@ class CartSummary extends React.Component {
           <div className='background-modal'>
             <div className='intro-modal border border-light rounded shadow m-auto d-flex'>
               <div className='m-auto align-self-center text-center'>
-                <div>Would like to remove this from your cart? <br /> * None of your transactions will be processed *</div>
+                <div>Would like to remove this from your cart? </div>
                 <div className='d-flex justify-content-around m-auto'>
                   <button className="btn btn-secondary mt-2"
                     onClick={() => this.toggleDeleteConfirmation()}>Cancel</button>

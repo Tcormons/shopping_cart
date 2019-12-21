@@ -6,11 +6,13 @@ class Checkout extends React.Component {
     this.state = {
       name: '',
       creditCard: null,
-      shippingAddress: ''
+      shippingAddress: '',
+      acknowledge: false
     };
 
     this.handleFormChange = this.handleFormChange.bind(this);
     this.handleSubmitForm = this.handleSubmitForm.bind(this);
+    this.handleAcknowledgeChange = this.handleAcknowledgeChange.bind(this);
   }
 
   handleFormChange(event) {
@@ -18,6 +20,10 @@ class Checkout extends React.Component {
     const newValue = (event.target.name === 'creditCard') ? parseInt(event.target.value) : event.target.value;
     state[event.target.name] = newValue;
     this.setState(state);
+  }
+
+  handleAcknowledgeChange() {
+    this.setState({ acknowledge: !this.setState.acknowledge });
   }
 
   handleSubmitForm(event) {
@@ -75,12 +81,20 @@ class Checkout extends React.Component {
                 type="shippingAddress"
                 name="shippingAddress"></textarea>
             </div>
+            <label
+              className="text-white">
+              <input
+                type="checkbox"
+                onChange={this.handleAcknowledgeChange} />
+              You acknowledge that no personal or credit card information has been entered in the above fields.
+            </label>
             <div className="d-flex justify-content-end">
               <button
                 className="btn btn-primary justify-content-end"
-                disabled={!!(this.state.name === '' ||
-                this.state.creditCard === '' ||
-                this.state.shippingAddress === '')}>
+                disabled={this.state.name === '' ||
+                  this.state.creditCard === '' ||
+                  this.state.shippingAddress === '' ||
+                  this.state.acknowledge === false}>
                 Submit</button>
             </div>
           </form>
