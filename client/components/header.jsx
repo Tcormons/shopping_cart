@@ -7,6 +7,10 @@ class Header extends React.Component {
   }
 
   render() {
+
+    const itemCount = this.props.itemCount.reduce((acc, item) => acc + item.quantity, 0);
+    const item = itemCount === 1 ? 'Item' : 'Items';
+
     return (
       <div>
         <div className="header col-12 sticky-top bg-dark text-white shadow d-flex justify-content-between">
@@ -14,13 +18,13 @@ class Header extends React.Component {
             onClick={this.props.callback}
             style={{ cursor: 'pointer' }}></div>
           <h1 className="banner-title align-self-center"
-            onClick={this.props.checkout}
+            onClick={this.props.callback}
             style={{ cursor: 'pointer' }}>Local Sports</h1>
           <div className="d-flex align-self-center"
             onClick={this.props.checkout}
             style={{ cursor: 'pointer' }}>
             <h6 className="align-self-center"
-              style={{ cursor: 'pointer' }}>{this.props.itemCount.reduce((acc, item) => { return acc + item.quantity; }, 0)} Items</h6>
+              style={{ cursor: 'pointer' }}>{itemCount} {item}</h6>
             <div className="fa fa-shopping-cart fa-lg align-self-center"></div>
           </div>
         </div>
