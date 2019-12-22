@@ -35,7 +35,7 @@ class Checkout extends React.Component {
   }
 
   render() {
-    const total = this.props.cart.reduce((accum, item) => (accum + item.price), 0);
+    const total = this.props.cart.reduce((accum, item) => (accum + (item.price * item.quantity)), 0);
     const price = `$${(total / 100).toFixed(2)}`;
 
     return (

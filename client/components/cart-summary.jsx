@@ -60,11 +60,11 @@ class CartSummary extends React.Component {
       return (
         <div>
           <div className='background-modal'>
-            <div className='intro-modal border border-light rounded shadow m-auto d-flex'>
-              <div className='m-auto align-self-center text-center'>
+            <div className='intro-modal text-white rounded shadow m-auto d-flex'>
+              <div className='mx-auto text-center d-flex flex-column p-3'>
                 <div>Would like to remove this from your cart? </div>
-                <div className='d-flex justify-content-around m-auto'>
-                  <button className="btn btn-secondary mt-2"
+                <div className='d-flex justify-content-around mt-5'>
+                  <button className="btn btn-info mt-2"
                     onClick={() => this.toggleDeleteConfirmation()}>Cancel</button>
                   <button className="btn btn-danger mt-2"
                     onClick={() => {
@@ -113,7 +113,7 @@ class CartSummary extends React.Component {
     return (
       <div className="display-container">
         <div className="row">
-          <div className="col-sm-12 d-flex justify-content-around bg-white sticky-top shadow">
+          <div className="col-sm-12 d-flex justify-content-around bg-white shadow">
             <div className='d-flex text-black ml-2 align-self-center'
               onClick={() => this.props.callback('catalog', {})}
               style={{ cursor: 'pointer' }}>
