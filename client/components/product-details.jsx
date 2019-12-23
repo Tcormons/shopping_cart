@@ -66,11 +66,11 @@ class ProductDetails extends React.Component {
       return (
         <div>
           <div className='background-modal'>
-            <div className='intro-modal border border-light rounded shadow m-auto d-flex'>
-              <div className='m-auto align-self-center text-center'>
+            <div className='intro-modal rounded shadow m-auto d-flex'>
+              <div className='mx-auto align-self-center text-white text-center'>
                 <div>Great! Let&apos;s get you out there playing!</div>
-                <div className='d-flex justify-content-around m-auto'>
-                  <button className="btn btn-secondary"
+                <div className='d-flex justify-content-between mt-5'>
+                  <button className="btn btn-primary"
                     onClick={() => this.props.callback('catalog', {})}>Keep Shopping</button>
                   <button className="btn btn-info"
                     onClick={() => this.props.callback('cart', {})}>View Cart</button>
