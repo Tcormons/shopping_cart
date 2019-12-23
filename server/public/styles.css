@@ -71,10 +71,12 @@
 
 .display-container {
   min-height: 86vh;
+  margin-top: 10vh;
 }
 
 .checkout-container {
-  min-height: 82vh;
+  min-height: 83vh;
+  margin-top: 10vh;
 }
 
 .intro-modal {
@@ -83,7 +85,7 @@
   background-color: rgba(112, 112, 112, 0.863);
   position: absolute;
   font-size: 1.5rem;
-  top: 10%;
+  top: 30vh;
   left: 10%;
   z-index: 1;
 }
