@@ -3,6 +3,16 @@
   font-family: 'Roboto Condensed', sans-serif;
   user-select: none;
   overscroll-behavior: none;
+  animation: fadein 1s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .img {
@@ -159,7 +169,7 @@
   .header {
     height: 10vh;
   }
-  .footer{
+  .footer {
     height: 9vh;
   }
 }
