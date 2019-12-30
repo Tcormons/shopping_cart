@@ -13,7 +13,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       view: { name: 'intro', params: {} },
-      cart: []
+      cart: [],
+      filter: ''
     };
 
     this.setView = this.setView.bind(this);
@@ -83,6 +84,18 @@ class App extends React.Component {
     this.setState({ view: { name: 'catalog', params: {} } });
   }
 
+  filterCatalog(filter) {
+    if (this.state.filter !== '') {
+      this.setState({
+        filter: ''
+      });
+    } else {
+      this.setState({
+        filter: filter
+      });
+    }
+  }
+
   placeOrder(cart) {
     const req = {
       method: 'POST',
@@ -127,9 +140,11 @@ class App extends React.Component {
             checkout={this.cartCheckout}
             callback={this.setCatalogView} />
           <Banner />
-          <ProductList callback={this.setView} />
+          <ProductList callback={this.setView}
+            filterView={this.state.filter} />
           <Footer
-            callback={this.setCatalogView} />
+            callback={this.setCatalogView}
+            filter={filter => this.filterCatalog(filter)} />
         </div>
       );
     }
@@ -144,9 +159,10 @@ class App extends React.Component {
           <ProductDetails
             params={this.state.view.params}
             callback={this.setView}
-            addToCart={this.addToCart}/>
+            addToCart={this.addToCart} />
           <Footer
-            callback={this.setCatalogView}/>
+            callback={this.setCatalogView}
+            filter={filter => this.filterCatalog(filter)} />
         </div>
       );
     }
