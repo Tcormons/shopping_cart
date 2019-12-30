@@ -14,7 +14,7 @@ if ($request['method'] === 'GET') {
     $sql = mysqli_query($link, $query);
     $data = (mysqli_fetch_assoc($sql));
   } else {
-    $query = "SELECT productId, name, price, image, shortDescription FROM `products`";
+    $query = "SELECT productId, name, price, image, category, shortDescription FROM `products`";
     $sql = mysqli_query($link, $query);
     $data = (mysqli_fetch_all($sql, MYSQLI_ASSOC));
   }

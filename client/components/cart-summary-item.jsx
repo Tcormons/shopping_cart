@@ -12,12 +12,14 @@ function CartSummaryItem(props) {
           <div className='text-center mb-3'>
             <p className="m-0"> Quantity </p>
             <i className="fa fa-minus-circle fa-lg m-2"
+              style={{ cursor: 'pointer' }}
               aria-hidden="true"
               onClick={() => props.product.quantity > 1 ? props.callbackQuantity(props.product, '-') : false}></i>
             <input disabled className="value text-center align-self-center"
               placeholder={props.product.quantity}
               style={{ width: '10vw', height: '1.4rem' }} />
             <i className="fa fa-plus-circle fa-lg m-2"
+              style={{ cursor: 'pointer' }}
               aria-hidden="true"
               onClick={() => props.callbackQuantity(props.product, '+')}></i>
           </div>
