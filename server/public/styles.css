@@ -3,6 +3,9 @@
   font-family: 'Roboto Condensed', sans-serif;
   user-select: none;
   overscroll-behavior: none;
+}
+
+body {
   animation: fadein 1s;
 }
 
@@ -35,7 +38,7 @@
 }
 
 .icon {
-  background-image: url('./images/LSLogo.jpg');
+  background-image: url('./images/AGLogo.jpg');
   background-position: center;
   background-size: cover;
   border-radius: 50%;
@@ -52,7 +55,6 @@
 .cart-item:hover {
   box-shadow: 0 0 20px rgba(243, 53, 53, 0.904);
 }
-
 
 .checkout-input {
   transition: .5s all;
@@ -122,6 +124,10 @@
   }
   .intro-modal {
     padding: 2%;
+  }
+  .products-details {
+    flex-direction: column;
+    text-align: center;
   }
 }
 
