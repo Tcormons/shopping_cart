@@ -19,7 +19,7 @@ class Header extends React.Component {
             style={{ cursor: 'pointer' }}></div>
           <h1 className="banner-title align-self-center"
             onClick={this.props.callback}
-            style={{ cursor: 'pointer' }}>Local Sports</h1>
+            style={{ cursor: 'pointer' }}>Athletix Gear</h1>
           <div className="d-flex align-self-center"
             onClick={this.props.checkout}
             style={{ cursor: 'pointer' }}>
