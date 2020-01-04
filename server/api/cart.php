@@ -26,7 +26,6 @@ if ($request['method'] === 'POST') {
       $cartInsertId = $link->insert_id;
       $_SESSION['cart_id'] = $cartInsertId;
     }
-    // $quanity = 1;
     $cartsInsertId = $_SESSION['cart_id'];
     $operator = $request['body']['operator'];
     $productId = intval($request['body']['productId']);
