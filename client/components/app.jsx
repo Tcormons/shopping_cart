@@ -12,7 +12,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: { name: 'intro', params: {} },
+      view: { name: 'checkout', params: {} },
       cart: [],
       filter: ''
     };

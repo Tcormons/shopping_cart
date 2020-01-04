@@ -9,6 +9,8 @@ if ($request['method'] === 'POST') {
 
   $cartId = $_SESSION['cart_id'];
   $name = $request['body']['name'];
+  $email = $request['body']['email'];
+  $phone = $request['body']['phone'];
   $creditCard = $request['body']['creditCard'];
   $shippingAddress = $request['body']['shippingAddress'];
 
@@ -24,10 +26,10 @@ if ($request['method'] === 'POST') {
     throw new ApiError('You need to present a shipping address to checkout', 400);
   }
 
-  $orderQuery = "INSERT INTO `orders`(cartId, name, creditCard, shippingAddress)
-                 VALUES (?,?,?,?)";
+  $orderQuery = "INSERT INTO `orders`(cartId, name, email, phone, creditCard, shippingAddress)
+                 VALUES (?,?,?,?,?,?)";
   $statement = $link->prepare($orderQuery);
-  $statement->bind_param('isss', $cartId, $name, $creditCard, $shippingAddress);
+  $statement->bind_param('isssss', $cartId, $name, $email, $phone, $creditCard, $shippingAddress);
   $orderSubmit = $statement->execute();
   $orderId = $statement->insert_id;
 
