@@ -30,7 +30,7 @@ CREATE TABLE `cartItems` (
   `price` int(11) NOT NULL,
   PRIMARY KEY (`cartItemId`),
   UNIQUE KEY `Secondary` (`cartId`,`productId`)
-) ENGINE=InnoDB AUTO_INCREMENT=509 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=532 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `cartItems` (
 
 LOCK TABLES `cartItems` WRITE;
 /*!40000 ALTER TABLE `cartItems` DISABLE KEYS */;
-INSERT INTO `cartItems` VALUES (397,26,1,1,2999),(404,27,1,1,2999),(405,28,1,2,2999),(407,29,1,1,2999),(451,30,6,2,3999),(460,30,3,1,4900),(492,31,6,1,3999),(496,31,2,1,2595),(501,31,1,1,2999),(502,32,3,1,4900),(503,32,2,2,2595);
+INSERT INTO `cartItems` VALUES (529,34,1,1,2999),(530,35,1,1,2999),(531,36,1,1,2999);
 /*!40000 ALTER TABLE `cartItems` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -54,7 +54,7 @@ CREATE TABLE `carts` (
   `cartId` int(11) NOT NULL AUTO_INCREMENT,
   `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`cartId`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -63,7 +63,7 @@ CREATE TABLE `carts` (
 
 LOCK TABLES `carts` WRITE;
 /*!40000 ALTER TABLE `carts` DISABLE KEYS */;
-INSERT INTO `carts` VALUES (26,'2019-12-20 00:54:13'),(27,'2019-12-20 23:03:33'),(28,'2019-12-20 23:04:48'),(29,'2019-12-20 23:06:18'),(30,'2019-12-20 23:10:26'),(31,'2019-12-22 18:56:03'),(32,'2019-12-23 01:20:33');
+INSERT INTO `carts` VALUES (34,'2020-01-03 20:16:33'),(35,'2020-01-03 20:21:03'),(36,'2020-01-03 20:25:31');
 /*!40000 ALTER TABLE `carts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -78,11 +78,13 @@ CREATE TABLE `orders` (
   `orderId` int(11) NOT NULL AUTO_INCREMENT,
   `cartId` int(11) NOT NULL,
   `name` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
   `creditCard` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL,
   `shippingAddress` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`orderId`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,7 +93,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (22,14,'Tomas','1234','1234 LFz','2019-12-16 23:45:23'),(23,15,'asdf','234','asdf','2019-12-18 19:32:30'),(24,26,'asdf','234','asdf','2019-12-20 23:02:35'),(25,27,'asdf','234','asdf','2019-12-20 23:03:54'),(26,28,'fasdf','23','asdf','2019-12-20 23:06:15'),(27,29,'adf','2323','asdf','2019-12-20 23:08:26');
+INSERT INTO `orders` VALUES (28,34,'asdfasd','aeasdf','0','234234','asdfasdf','2020-01-03 20:19:36'),(29,35,'asdfas','asdfs','2342','234234','asdfads','2020-01-03 20:22:41');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -133,4 +135,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-30 19:42:36
+-- Dump completed on 2020-01-04  1:20:33
