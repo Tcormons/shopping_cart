@@ -170,7 +170,7 @@ class Checkout extends React.Component {
               </div>
               <form className="m-2"
                 onSubmit={this.handleSubmitForm}>
-                <div className="d-flex justify-content-center form-group">
+                <div className="d-flex justify-content-center form-group form-input">
                   <input className={this.state.nameValid ? 'error rounded checkout-input form-control' : 'rounded checkout-input form-control'}
                     onChange={this.handleFormChange}
                     onBlur={field => this.handleValidation('name')}
@@ -178,9 +178,10 @@ class Checkout extends React.Component {
                     placeholder="Full Name"
                     type="name"
                     value={this.state.name}
-                    name="name"></input>
+                    name="name"
+                    style={{ cursor: 'text' }}></input>
                 </div>
-                <div className="d-flex justify-content-center form-group">
+                <div className="d-flex justify-content-center form-group form-input">
                   <input className={this.state.emailValid ? 'error rounded checkout-input form-control' : 'rounded checkout-input form-control'}
                     onChange={this.handleFormChange}
                     onBlur={field => this.handleValidation('email')}
@@ -190,7 +191,7 @@ class Checkout extends React.Component {
                     type="name"
                     name="email"></input>
                 </div>
-                <div className="d-flex justify-content-center form-group">
+                <div className="d-flex justify-content-center form-group form-input">
                   <input className={this.state.phoneValid ? 'error rounded checkout-input form-control' : 'rounded checkout-input form-control'}
                     onChange={this.handleFormChange}
                     onBlur={field => this.handleValidation('phone')}
@@ -200,7 +201,7 @@ class Checkout extends React.Component {
                     value={this.state.phone}
                     name="phone"></input>
                 </div>
-                <div className="d-flex justify-content-center form-group">
+                <div className="d-flex justify-content-center form-group form-input">
                   <input className={this.state.addressValid ? 'error rounded checkout-input form-control' : 'rounded checkout-input form-control'}
                     onChange={this.handleFormChange}
                     onBlur={field => this.handleValidation('address')}
@@ -211,7 +212,7 @@ class Checkout extends React.Component {
                     name="address"></input>
                 </div>
                 <div className="row">
-                  <div className="d-flex justify-content-center form-group col-5">
+                  <div className="d-flex justify-content-center form-group col-5 form-input">
                     <input className={this.state.zipcodeValid ? 'error rounded checkout-input form-control' : 'rounded checkout-input form-control'}
                       onChange={this.handleFormChange}
                       onBlur={field => this.handleValidation('zipcode')}
@@ -221,7 +222,7 @@ class Checkout extends React.Component {
                       value={this.state.zipcode}
                       name="zipcode"></input>
                   </div>
-                  <div className="d-flex justify-content-center form-group col-3">
+                  <div className="d-flex justify-content-center form-group col-3 form-input">
                     <select className={this.state.stateValid ? 'error rounded checkout-input form-control' : 'rounded checkout-input form-control'}
                       onChange={this.handleFormChange}
                       maxLength="2"
@@ -280,7 +281,7 @@ class Checkout extends React.Component {
                       <option value="WY">Wyoming</option>
                     </select>
                   </div>
-                  <div className="d-flex justify-content-center form-group col-4">
+                  <div className="d-flex justify-content-center form-group col-4 form-input" >
                     <select className={this.state.countryValid ? 'error rounded checkout-input form-control' : 'rounded checkout-input form-control'}
                       onChange={this.handleFormChange}
                       type="name"
@@ -528,7 +529,7 @@ class Checkout extends React.Component {
                     </select>
                   </div>
                 </div>
-                <div className="d-flex justify-content-center form-group">
+                <div className="d-flex justify-content-center form-group form-input">
                   <input className={this.state.creditCardValid ? 'error rounded checkout-input form-control' : 'rounded checkout-input form-control'}
                     onChange={this.handleFormChange}
                     onBlur={field => this.handleValidation('creditCard')}
@@ -539,7 +540,7 @@ class Checkout extends React.Component {
                     name="creditCard"></input>
                 </div>
                 <div className="row">
-                  <div className="d-flex justify-content-center form-group col-6">
+                  <div className="d-flex justify-content-center form-group col-6 form-input">
                     <input className={this.state.creditCardExpierationValid ? 'error rounded checkout-input form-control' : 'rounded checkout-input form-control'}
                       onChange={this.handleFormChange}
                       onBlur={field => this.handleValidation('creditCardExpiration')}
@@ -549,7 +550,7 @@ class Checkout extends React.Component {
                       value={this.state.creditCardExpiration}
                       name="creditCardExpiration"></input>
                   </div>
-                  <div className="d-flex justify-content-center form-group col-4">
+                  <div className="d-flex justify-content-center form-group col-4 form-input">
                     <input className={this.state.creditCardCVVValid ? 'error rounded checkout-input form-control' : 'rounded checkout-input form-control'}
                       onChange={this.handleFormChange}
                       onBlur={field => this.handleValidation('creditCardCVV')}
