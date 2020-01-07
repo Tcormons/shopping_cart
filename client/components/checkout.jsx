@@ -146,7 +146,7 @@ class Checkout extends React.Component {
       creditCard: this.state.creditCard,
       creditCardCVV: this.state.creditCardCVV,
       shippingAddress: `${this.state.address} ${this.state.zipcode} ${this.state.state} ${this.state.country}`
-    }
+    };
     this.props.submitCallback(cart);
   }
 
