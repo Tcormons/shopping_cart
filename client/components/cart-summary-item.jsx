@@ -3,7 +3,7 @@ import React from 'react';
 function CartSummaryItem(props) {
   const price = `$${(props.product.price / 100).toFixed(2)}`;
   return (
-    <div className="cart-item justify-content-between col-11 mx-auto bg-dark rounded">
+    <div className="cart-item justify-content-between col-11 col-sm-8 mx-auto bg-dark rounded">
       <img className="img img-fluid text-center rounded" src={props.product.image} />
       <div className="item-container text-white m-3 text-center d-flex align-self-center">
         <div className="mt-3 text-center">

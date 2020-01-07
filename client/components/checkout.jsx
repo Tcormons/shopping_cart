@@ -12,9 +12,9 @@ class Checkout extends React.Component {
       phoneValid: false,
       address: '',
       addressValid: false,
-      state: '',
+      state: 'CA',
       stateValid: false,
-      country: '',
+      country: 'United States',
       countryValid: false,
       zipcode: '',
       zipcodeValid: false,
@@ -139,7 +139,15 @@ class Checkout extends React.Component {
 
   handleSubmitForm(event) {
     event.preventDefault();
-    this.props.submitCallback(this.state);
+    const cart = {
+      name: this.state.name,
+      email: this.state.email,
+      phone: this.state.phone,
+      creditCard: this.state.creditCard,
+      creditCardCVV: this.state.creditCardCVV,
+      shippingAddress: `${this.state.address} ${this.state.zipcode} ${this.state.state} ${this.state.country}`
+    }
+    this.props.submitCallback(cart);
   }
 
   render() {
