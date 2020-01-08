@@ -13,7 +13,7 @@ class Header extends React.Component {
 
     return (
       <div>
-        <div className="header col-12 fixed-top bg-dark text-white shadow d-flex justify-content-between">
+        <div className="header col-12 fixed-top bg-dark text-white shadow d-flex justify-content-between p-2">
           <div className="icon align-self-center"
             onClick={this.props.callback}
             style={{ cursor: 'pointer' }}></div>

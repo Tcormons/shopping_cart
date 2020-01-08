@@ -106,7 +106,7 @@ class App extends React.Component {
     fetch('/api/orders', req)
       .then(response => response.json())
       .then(data => this.setState({
-        view: { name: 'catalog', params: {} },
+        view: { name: 'complete', params: {} },
         cart: []
       }))
       .catch(error => console.error('Error', error));
@@ -125,6 +125,23 @@ class App extends React.Component {
             callback={this.setCatalogView} />
           <Banner />
           <Modal callback={this.setCatalogView} />
+          <ProductList />
+          <Footer
+            callback={this.setCatalogView} />
+        </div>
+      );
+    }
+
+    if (this.state.view.name === 'complete') {
+      return (
+        <div>
+          <Header
+            itemCount={this.state.cart}
+            callback={this.setCatalogView} />
+          <Banner />
+          <Modal
+          credits={this.state.view.name}
+          callback={this.setCatalogView} />
           <ProductList />
           <Footer
             callback={this.setCatalogView} />

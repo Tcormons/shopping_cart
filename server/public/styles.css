@@ -77,13 +77,13 @@ body {
   background-attachment: fixed;
 }
 
-.header {
+/* .header {
   height: 8vh;
 }
 
 .footer {
   height: 7vh;
-}
+} */
 
 .display-container {
   min-height: 86vh;
@@ -141,6 +141,21 @@ body {
   }
 }
 
+@media (max-width: 670px){
+  /* .header {
+    height: 16vh;
+  }
+
+  .footer {
+    height: 15vh;
+  } */
+
+  .intro-modal {
+    font-size: 1.3rem;
+    top: 20vh;
+  }
+}
+
 @media (max-width: 500px) {
   .products {
     width: 100%;
@@ -180,12 +195,12 @@ body {
     margin: 0;
     margin-top: 2vh;
   }
-  .header {
+  /* .header {
     height: 10vh;
   }
   .footer {
     height: 9vh;
-  }
+  } */
 }
 
 input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {

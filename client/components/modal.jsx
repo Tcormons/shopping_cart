@@ -1,6 +1,23 @@
 import React from 'react';
 
 export default function Modal(props) {
+
+  if (props.credits === 'complete'){
+    return (
+      <div>
+        <div className='background-modal'>
+          <div className='intro-modal rounded shadow m-auto d-flex p-4'>
+            <div className='m-auto align-self-center text-center text-white'>
+              <div>Congratulations, this signifies the end of the e-commerce Athletix Gear Demo.</div>
+              <button className="btn btn-primary mt-3"
+                onClick={props.callback}>Acknowledge</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div>
       <div className='background-modal'>

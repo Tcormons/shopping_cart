@@ -3,7 +3,7 @@ import React from 'react';
 export default function Footer(props) {
   return (
     <div>
-      <div className="footer col-sm-12 bg-dark text-white d-flex justify-content-between">
+      <div className="footer col-sm-12 bg-dark text-white d-flex justify-content-between p-2">
         <div className="icon align-self-center"
           onClick={props.callback}
           style={{ cursor: 'pointer' }} />
