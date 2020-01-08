@@ -14,7 +14,7 @@ function CartSummaryItem(props) {
             <i className="fa fa-minus-circle fa-lg m-2"
               style={{ cursor: 'pointer' }}
               aria-hidden="true"
-              onClick={() => props.product.quantity > 1 ? props.callbackQuantity(props.product, '-') : false}></i>
+              onClick={() => props.product.quantity > 1 ? props.callbackQuantity(props.product, '-') : props.callbackRemoveItem(props.product)}></i>
             <input disabled className="value text-center align-self-center"
               placeholder={props.product.quantity}
               style={{ width: '10vw', height: '1.4rem' }} />
