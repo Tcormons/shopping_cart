@@ -123,20 +123,24 @@ body {
 }
 
 @media (max-width: 785px) {
+  .display-container{
+    margin-top: 14%;
+  }
+
   .products {
     width: 45%;
   }
   .cart-item {
-    display: inline-block;
+    /* display: inline-block; */
   }
   .img {
-    width: 100%;
+    /* width: 100%; */
   }
   .intro-modal {
     padding: 2%;
   }
   .products-details {
-    flex-direction: column;
+    /* flex-direction: column; */
     text-align: center;
   }
 }
