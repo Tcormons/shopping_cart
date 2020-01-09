@@ -148,9 +148,9 @@ class Checkout extends React.Component {
 
     return (
       <div className='container'>
-        <div className="col-sm-10 col-md-6 mx-auto">
+        <div className="col-sm-10 col-md-8 mx-auto">
           <div className='checkout-container'>
-            <div className="container rounded mt-4 p-2 bg-dark shadow">
+            <div className="container rounded my-4 p-2 bg-dark shadow">
               <div className="d-flex justify-content-between mb-2">
                 <div className='d-flex text-white align-self-baseline'>
                   <div className="fa fa-arrow-left py-2 fa-lg"
