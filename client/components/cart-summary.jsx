@@ -21,7 +21,7 @@ class CartSummary extends React.Component {
     if (this.props.cart.length === 0) {
       return (
         <div>
-          <div className="display-container">
+          <div className="display-container container">
             <div className="col-sm-12 d-flex justify-content-around bg-white sticky-top shadow">
               <div className='d-flex text-black ml-2 align-self-center'
                 onClick={() => this.props.callback('catalog', {})}
@@ -75,7 +75,7 @@ class CartSummary extends React.Component {
               </div>
             </div>
           </div>
-          <div className="display-container">
+          <div className="display-container container">
             <div className="row">
               <div className="col-sm-12 d-flex justify-content-around bg-white sticky-top shadow">
                 <div className='d-flex text-black ml-2 align-self-center'
@@ -111,7 +111,7 @@ class CartSummary extends React.Component {
     }
 
     return (
-      <div className="display-container">
+      <div className="display-container container">
         <div className="row">
           <div className="col-sm-12 d-flex justify-content-around bg-white shadow">
             <div className='d-flex text-black ml-2 align-self-center'
